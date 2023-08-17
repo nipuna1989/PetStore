@@ -2254,16 +2254,11 @@
 				}
 			],
 			"id": "7bda3a97-259c-41ca-a31e-14649126f161"
-		},
-		{
-			"name": ".circleci",
-			"item": [],
-			"id": "71d9d3f4-b61c-4ed6-a2b2-1884d2abdd73"
 		}
 	],
 	"variable": [
 		{
-			"id": "7d355d6c-f774-47da-9239-5f4216f4fe0c",
+			"id": "601e8304-3999-471b-997f-2ec0a0bb8cfc",
 			"key": "baseUrl",
 			"value": "https://petstore.swagger.io/v2"
 		}
