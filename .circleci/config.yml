@@ -1,0 +1,14 @@
+version: 2.1
+executors:
+  postman-executor:
+    docker:
+      - image: postman/newman:alpine
+
+jobs:
+  build:
+    executor: postman-executor
+    steps:
+      - checkout
+      - run:
+          name: Run Postman Collection
+          command: newman run https://api.getpostman.com/collections/16511776-c3c2fcd7-0eb8-4af4-b262-1f86fab126f5?apikey=PMAK-64de1fe774bd860ffcb4b44d-a3fa3f91fd6bcc1affe039dd13ea99959a
