@@ -1452,6 +1452,27 @@
 					"item": [
 						{
 							"name": "Returns pet inventories by status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7436b94f-cb61-45f6-a2aa-e6957e70b014",
+										"exec": [
+											"// Assertion 1: Check if the response status code is 200 (OK)\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Assertion 2: Check if available qty is positive\r",
+											"pm.test(\"Available qty is positive\", function () {\r",
+											"    var responseData = pm.response.json();\r",
+											"    pm.expect(responseData.available).to.be.above(0);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "a467c343-4edf-459b-91e9-d2fdd16d83ad",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2269,7 +2290,7 @@
 	],
 	"variable": [
 		{
-			"id": "18e7c501-e72b-4752-b448-7c82583ac0db",
+			"id": "121e23a7-a609-4634-b3fe-6e789e0983e6",
 			"key": "baseUrl",
 			"value": "https://petstore.swagger.io/v2"
 		}
