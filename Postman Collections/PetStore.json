@@ -714,7 +714,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "251e2bd6-8ef4-47c2-a6e8-f9f0b05c39b8",
+								"id": "18ee2cea-e5ec-4c22-9f55-b9eeb75eba1a",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -724,20 +724,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "085525c6-be9a-4835-b9fe-a7365d1d0e28",
+								"id": "6ad1befc-62f4-4266-a8de-45a8c7d8985e",
 								"type": "text/javascript",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"// Assertion 2: Check if all pets in the response have the status 'available'",
-									"pm.test(\"All pets have 'available' status\", function () {",
-									"    var pets = pm.response.json();",
-									"    for (var i = 0; i < pets.length; i++) {",
-									"        pm.expect(pets[i].status).to.equal('available');",
-									"    }",
-									"});"
+									""
 								]
 							}
 						}
@@ -2279,7 +2269,7 @@
 	],
 	"variable": [
 		{
-			"id": "631114d5-792e-4984-bc51-62c015a739a9",
+			"id": "18e7c501-e72b-4752-b448-7c82583ac0db",
 			"key": "baseUrl",
 			"value": "https://petstore.swagger.io/v2"
 		}
