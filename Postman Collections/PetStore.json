@@ -553,6 +553,29 @@
 					"item": [
 						{
 							"name": "Finds Pets by status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1317c8dc-6844-47ad-a461-a62eae236b2e",
+										"exec": [
+											"// Assertion 1: Check if the response status code is 200 (OK)\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Assertion 2: Check if all pets in the response have the status 'available'\r",
+											"pm.test(\"All pets have 'available' status\", function () {\r",
+											"    var pets = pm.response.json();\r",
+											"    for (var i = 0; i < pets.length; i++) {\r",
+											"        pm.expect(pets[i].status).to.equal('available');\r",
+											"    }\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "a16cdb34-06e1-4c4c-ad11-22a4fa3d02a9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -584,14 +607,14 @@
 									],
 									"query": [
 										{
-											"description": "(Required) Status values that need to be considered for filter",
 											"key": "status",
-											"value": "available"
+											"value": "available",
+											"description": "(Required) Status values that need to be considered for filter"
 										},
 										{
-											"description": "(Required) Status values that need to be considered for filter",
 											"key": "status",
-											"value": "available"
+											"value": "available",
+											"description": "(Required) Status values that need to be considered for filter"
 										}
 									]
 								},
@@ -2256,7 +2279,7 @@
 	],
 	"variable": [
 		{
-			"id": "cb38ff95-74a6-4488-84cf-bbc5cef936cd",
+			"id": "631114d5-792e-4984-bc51-62c015a739a9",
 			"key": "baseUrl",
 			"value": "https://petstore.swagger.io/v2"
 		}
